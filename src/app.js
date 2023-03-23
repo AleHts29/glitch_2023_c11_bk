@@ -23,9 +23,9 @@ app.use(express.static(__dirname+'/public'));
 //Declaración de Routers:
 app.use("/", viewsRouter);
 
-const SERVER_PORT = 9090;
-const httpServer = app.listen(9090, () => {
-    console.log("Servidor escuchando por el puerto: " + SERVER_PORT);
+const PORT = process.env.PORT || 8080;
+const httpServer = app.listen(PORT, () => {
+    console.log("Servidor escuchando por el puerto: " + PORT);
 });
 
 //Iniciar Websocket server:
